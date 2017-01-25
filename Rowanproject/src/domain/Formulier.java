@@ -13,7 +13,7 @@ import java.util.Date;
  * @author rowan
  */
 
-//Attributen
+//Sets the private attributs (made the mistake to make them dutch)
 public class Formulier {
     
     private String ID;
@@ -24,19 +24,12 @@ public class Formulier {
     private String Commentaar;
     
     
-    //Getters
-    /**
-     * Property is mandatory
-     * @return 
-     */
+    //Gets the Attributes.
+    
     public String getID() {
         return ID;
     }
-    
-    /**
-     * Property id optional
-     * @return 
-     */
+   
     public String getNaam() {
         return Naam;
     }
@@ -55,7 +48,7 @@ public String getSoort() {
         return Commentaar;
     }
     
-    //Setters
+    //Sets the Attributes.
     
     public void setID ( String ID) {
         this.ID = ID; 
@@ -70,13 +63,12 @@ public String getSoort() {
      public void setDatum ( Date Datum) {
          this.Datum = Datum;
      }
-
-             
-             public void setReactie ( String Reactie) {
+        
+     public void setReactie ( String Reactie) {
         this.Reactie = Reactie; 
     }
     
-   public void setCommentaar ( String Commentaar) {
+     public void setCommentaar ( String Commentaar) {
         this.Commentaar = Commentaar; 
     }
 }

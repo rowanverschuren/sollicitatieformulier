@@ -24,10 +24,9 @@ public class FormulierDAO {
     
     
 public FormulierDAO() {
-   //  logger = Logger.getLogger("Tijdelijk");
+
+    // Sets up the Insert/Create and Find statements for the database.
    
-    
-    
 
 }
 
@@ -37,7 +36,8 @@ public FormulierDAO() {
         connection connection = new connection();
         if (connection.openConnection()) {
                 // If a connection was successfully setup, execute the INSERT statement.
-   //             String sqlstatement = "insert into formulier values('hahah','sanders', 'Vacature', '2017-01-12', 'ja', 'ja')";
+                
+                
                 java.sql.Date sqlDate = new java.sql.Date(form.getDatum().getTime());
                 String sqlstatement = "insert into formulier values(" +
                         "'" + form.getID() + "'" + assembleSQL(form.getNaam()) + assembleSQL(form.getSoort()) + 
@@ -45,12 +45,11 @@ public FormulierDAO() {
                 connection.executeSqlDmlStatement(sqlstatement);
                 connection.closeConnection();
         }
- //       logger.info(form.getNaam());
         
-}
+}       // Waarom hebben we deze erin gezet?
     private String assembleSQL(String value){
         return value.isEmpty() ? ",' '" : "," + "'" + value + "'";
-     //   return value.isEmpty() ? "" : "," +  value;
+    
     }
     
     // finds the ID 
@@ -58,6 +57,10 @@ public FormulierDAO() {
         Formulier formulier = null;
         connection connection = new connection();
         if (connection.openConnection()) {
+            
+            // What houd de resultset in en waarom de try en catch?
+            
+            
 //  SELECT * FROM `formulier` WHERE ID='id1' 
             ResultSet rs = connection.executeSQLSelectStatement(
                         "SELECT * FROM Formulier WHERE ID='" + Id + "'");
@@ -82,48 +85,6 @@ public FormulierDAO() {
         }
         return formulier;
     }
-
-
-    
-   
-    
-   public void Update (String Id, Formulier form){ 
-    
-        connection connection = new connection();
-        if (connection.openConnection()) {
-                // If a connection was successfully setup, execute the UPDATE statement
-                
-                
-                
-                connection.executeSqlDmlStatement(sqlstatement);
-                connection.closeConnection();
-        }
-        }
-       
-      
-   
-   
-   public void delete (String id){
-       
-       boolean result = false;
-
-        if (id != null) {
-            // First open the database connection.
-            connection connection = new connection();
-            if (connection.openConnection()) {
-                // Execute the delete statement using the membership number to
-                // identify the member row.
-                result = connection.executeSqlDmlStatement(
-                        "DELETE FROM formulier WHERE ID = " + delete.getID() + ";");
-
-                // Finished with the connection, so close it.
-                connection.closeConnection();
-            }
-            // else an error occurred leave 'member' to null.
-        }
-   
-   }
-
 }
 
 

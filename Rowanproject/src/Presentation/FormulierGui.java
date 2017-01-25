@@ -21,27 +21,30 @@ import java.text.SimpleDateFormat;
  *
  * @author rowan
  */
-    public class FormulierGui extends JFrame 
+
+// Defines the frame
+        public class FormulierGui extends JFrame 
     {
  
      public FormulierGui(){
      super();
      setSize (400, 400);
-    setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-    setTitle ("Sollicitatie formulier");
-    setContentPane( new SollicitatiePaneel ());
-    setVisible (true);
+     setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+     setTitle ("Sollicitatie formulier");
+     setContentPane( new SollicitatiePaneel ());
+     setVisible (true);
   
  }
  
 }
-          //Jpanel
+        
 class SollicitatiePaneel extends JPanel {
 
     
-        //inwendige klasse
+        //inner class handlers
         class InvoerHandler implements ActionListener
-        {
+        {   
+            //waarom is het actionevent e?
             public void actionPerformed ( ActionEvent e)
             {
                 Formulier formulier = formulierDAO.find(IdField.getText());
@@ -66,8 +69,6 @@ class SollicitatiePaneel extends JPanel {
                  formulier.setID(IdField.getText());
                  formulier.setNaam (NaamField.getText());
                  formulier.setSoort(SoortField.getText());
-           //      Calendar kalender = Calendar.getInstance();
-           //      formulier.setDatum(kalender.getTime()); 
                  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
                  formulier.setDatum(dateFormat.parse(DatumField.getText()));
                  formulier.setReactie(ReactieField.getText());
@@ -94,30 +95,32 @@ class SollicitatiePaneel extends JPanel {
         
         //sets layout with fields
         
-        IdField = new JTextField (20);
-        NaamField = new JTextField (20);
-        SoortField = new JTextField (20);
-        DatumField = new JTextField (20);
-        ReactieField = new JTextField (20);
-        CommentaarField = new JTextField (20);
+                 IdField = new JTextField (20);
+                 NaamField = new JTextField (20);
+                 SoortField = new JTextField (20);
+                 DatumField = new JTextField (20);
+                 ReactieField = new JTextField (20);
+                 CommentaarField = new JTextField (20);
         
     
         //new labels
-        IdLabel = new JLabel ("ID");
-        NaamLabel = new JLabel ("Naam bedrijf");
-        SoortLabel = new JLabel ("Soort vacature");
-        DatumLabel = new JLabel ("Datum");
-        ReactieLabel = new JLabel ("Reactie");
-        CommentaarLabel = new JLabel ("Commentaar");
+                 IdLabel = new JLabel ("ID");
+                 NaamLabel = new JLabel ("Naam bedrijf");
+                 SoortLabel = new JLabel ("Soort vacature");
+                 DatumLabel = new JLabel ("Datum");
+                 ReactieLabel = new JLabel ("Reactie");
+                 CommentaarLabel = new JLabel ("Commentaar");
         
         
         
         //new buttons
-        Create = new JButton ("create");
-        Invoer = new JButton ("find");
-        Update = new JButton ("update");
-        Delete = new JButton ("delete");
-        // knophandel en actionlistener
+                 Create = new JButton ("create");
+                 Invoer = new JButton ("find");
+                 
+        //unused buttons explanation in "reflextieverslag"
+                 Update = new JButton ("update");
+                 Delete = new JButton ("delete");
+       
         
         //New actionhandlers
         
@@ -172,8 +175,8 @@ add (CommentaarField);
 
 add (Create);
 add (Invoer);
-add (Update);
-add (Delete);
+
+
 
 formulierDAO = new FormulierDAO();
 

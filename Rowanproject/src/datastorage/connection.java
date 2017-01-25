@@ -31,7 +31,7 @@ public class connection {
 
         if (connection == null) {
             try {
-                // Try to create a connection with the library database
+                // Try to create a connection with the formulier database
               
                 connection = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/formulier","root", "" );
