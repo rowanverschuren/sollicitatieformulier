@@ -31,17 +31,8 @@ public FormulierDAO() {
 
 }
 
-/**
-     * Tries to find the Job application identified by the given ID number in the
-     * persistent data store, in this case a MySQL database. All other 
-     * 'information are loaded as well.
-     *
-     * @param IdNumber identifies the Job application to be loaded from the
-     * database
-     *
-     * @return the Member object to be found. In case member could not be found,
-     * null is returned.
-     */
+//creates and inserts the database rows
+
     public void Create (Formulier form) { 
         connection connection = new connection();
         if (connection.openConnection()) {
@@ -64,27 +55,75 @@ public FormulierDAO() {
     
     // finds the ID 
     public Formulier find (String Id){
-       connection connection = new connection();
+        Formulier formulier = null;
+        connection connection = new connection();
         if (connection.openConnection()) {
-            ResultSet resultset = connection.executeSQLSelectStatement(
-                        "SELECT Naam FROM Formulier = " + Naam + ";");
-            connection.executeSqlFindStatement(sqlstatement);
-                connection.closeConnection();
+//  SELECT * FROM `formulier` WHERE ID='id1' 
+            ResultSet rs = connection.executeSQLSelectStatement(
+                        "SELECT * FROM Formulier WHERE ID='" + Id + "'");
+            if (rs != null){
+                try{
+                    if (rs.next()){
+                        formulier = new Formulier();
+                        formulier.setID(rs.getString("ID"));
+                        formulier.setNaam(rs.getString("Naam_bedrijf"));
+                        formulier.setSoort(rs.getString("Soort_sollicitatie"));
+                        formulier.setDatum(rs.getDate("Datum"));
+                        formulier.setReactie(rs.getString("Reactie_terug"));
+                        formulier.setCommentaar(rs.getString("commentaar"));
+                         
+                    }
+                } catch (SQLException e) {
+                        System.out.println(e); 
+                        return null;
+                }
+                } 
+             connection.closeConnection();
         }
-        }
+        return formulier;
+    }
+
 
     
    
     
    public void Update (String Id, Formulier form){ 
-      
+    
+        connection connection = new connection();
+        if (connection.openConnection()) {
+                // If a connection was successfully setup, execute the UPDATE statement
+                
+                
+                
+                connection.executeSqlDmlStatement(sqlstatement);
+                connection.closeConnection();
+        }
+        }
        
+      
+   
+   
+   public void delete (String id){
+       
+       boolean result = false;
+
+        if (id != null) {
+            // First open the database connection.
+            connection connection = new connection();
+            if (connection.openConnection()) {
+                // Execute the delete statement using the membership number to
+                // identify the member row.
+                result = connection.executeSqlDmlStatement(
+                        "DELETE FROM formulier WHERE ID = " + delete.getID() + ";");
+
+                // Finished with the connection, so close it.
+                connection.closeConnection();
+            }
+            // else an error occurred leave 'member' to null.
+        }
+   
    }
-   
-   
-   public void delete (String Id){
-   
-   }
+
 }
-           
-           
+
+

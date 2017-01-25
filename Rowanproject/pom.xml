@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.avans</groupId>
   <artifactId>hartigeHap</artifactId>
-  <name>hartigeHap</name>
+  <name>Formulier</name>
   <packaging>jar</packaging>
   <version>1.0.0.BUILD-SNAPSHOT</version>
   <properties>
@@ -32,7 +32,7 @@
   </dependencies>
 
   <build>
-    <finalName>library_idh5</finalName>
+    <finalName>formulier</finalName>
 
     <plugins>
       <plugin>
@@ -52,7 +52,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2.1</version>
         <configuration>
-          <mainClass>edu.avans.tentamen.main.Main</mainClass>
+          <mainClass>Rowanproject.Main</mainClass>
         </configuration>
       </plugin>
       <plugin>

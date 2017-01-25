@@ -8,8 +8,8 @@ package main;
 //import Presentation.FormulierGui;
 import datastorage.FormulierDAO;
 import domain.Formulier;
-
-
+import Presentation.*;
+import javax.swing.*;
 /**
  *  * The class <code>Main</code> is the start of the application.
 
@@ -21,16 +21,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args)  {
+   
+    FormulierGui gui = new FormulierGui();
        
-//    FormulierGui gui = new FormulierGui();
-    FormulierDAO dao = new FormulierDAO();
-    Formulier form =  new Formulier();
-  
-    Formulier form2 =  new Formulier();
-    
-       form.setNaam("kleur");
-       
-       dao.Create(form);
-
+ 
     }
-    }
+}

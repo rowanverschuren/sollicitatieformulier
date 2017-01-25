@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  *
  * @author rowan
  */
-public class connectionTest {
+public class connectionTest {     
     
     public connectionTest() {
     }
@@ -70,7 +70,7 @@ public class connectionTest {
     @Test
     public void testCloseConnection() {
         System.out.println("closeConnection");
-        connection instance = new connection();
+        connection instance = new connection(); 
         instance.closeConnection();
         
     }

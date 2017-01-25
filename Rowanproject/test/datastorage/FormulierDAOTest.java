@@ -46,12 +46,12 @@ public class FormulierDAOTest {
     public void testCreate() {
         System.out.println("Create");
         Formulier form = new Formulier();
-        form.setID("id1");
-        form.setNaam ("bedrijf2");
-        form.setSoort("Vacature");
+        form.setID("1");
+        form.setNaam ("bedrijf7");
+        form.setSoort("Open sollicitatie");
         Calendar kalender = Calendar.getInstance();
         form.setDatum(kalender.getTime()); 
-        form.setReactie("");
+        form.setReactie("nee");
         form.setCommentaar("");
         
         
@@ -72,25 +72,35 @@ public class FormulierDAOTest {
         Formulier form = null;
         FormulierDAO instance = new FormulierDAO();
         instance.Update(Id, form);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
      * Test of find method, of class FormulierDAO.
      */
     @Test
-    public void testFind() {
+    public void testFindOnExistingFormulier() {
         System.out.println("find");
-        String Id = "";
         FormulierDAO instance = new FormulierDAO();
-        Formulier expResult = null;
-        Formulier result = instance.find(Id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String expectedID = "id1";
+        String expectedNaam = "bedrijf2";
+        Formulier result = instance.find(expectedID);
+        assertEquals(expectedID, result.getID());
+        assertEquals(expectedNaam, result.getNaam());
+       
     }
-
+/**
+     * Test of find method, of class FormulierDAO.
+     */
+    @Test
+    public void testFindOnNonExistingFormulier() {
+        System.out.println("find");
+        FormulierDAO instance = new FormulierDAO();
+        String ID = "&&&&&&&&&&";
+        Formulier result = instance.find(ID);
+        assertNull(result);
+        
+    }
     /**
      * Test of delete method, of class FormulierDAO.
      */
