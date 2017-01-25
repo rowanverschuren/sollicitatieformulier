@@ -3,7 +3,7 @@
  * To change this template , choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package avans.Presentation;
 
 import datastorage.connection;
 import datastorage.FormulierDAO;

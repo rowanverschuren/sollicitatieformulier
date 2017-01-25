@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.avans</groupId>
+  <groupId>avans</groupId>
   <artifactId>RowanFormulier</artifactId>
   <name>RowanFormulier</name>
   <packaging>jar</packaging>
@@ -32,7 +32,7 @@
   </dependencies>
 
   <build>
-    <finalName>library_idh5</finalName>
+    <finalName>RowanFormulier</finalName>
 
     <plugins>
       <plugin>
@@ -52,7 +52,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.2.1</version>
         <configuration>
-          <mainClass>edu.avans.tentamen.main.Main</mainClass>
+          <mainClass>org.test.int1.Main</mainClass>
         </configuration>
       </plugin>
       <plugin>
