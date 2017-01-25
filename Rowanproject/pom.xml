@@ -1,9 +1,9 @@
-4.0.0 edu.avans AvansVatLeon Avans Vat Leon jar 1.0.0.BUILD-SNAPSHOT UTF-8 1.8 junit junit 4.11 test mysql mysql-connector-java 5.1.21 library_idh5 org.apache.maven.plugins maven-compiler-plugin 2.3.2 ${java-version} ${java-version} -Xlint:all true true org.codehaus.mojo exec-maven-plugin 1.2.1 org.test.int1.Main org.apache.maven.plugins maven-jar-plugin 2.4 test-jar
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-<modelVersion>4.0.0</modelVersion>
-<groupId>edu.avans</groupId>
-<artifactId>RowanFormulier</artifactId>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.avans</groupId>
+artifactId>RowanFormulier</artifactId>
 <name>Rowan Forulier</name>
 <packaging>jar</packaging>
 <version>1.0.0.BUILD-SNAPSHOT</version>
